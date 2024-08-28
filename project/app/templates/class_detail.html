@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+    
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    /* overflow: hidden; */
+}
+
+.navbar {
+    background-color: #343a40;
+    padding: 10px;
+    color: white;
+}
+
+.navbar .logo {
+    font-size: 1.0em;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    
+    margin: 0;
+    padding: 0;
+    
+}
+
+.navbar .nav-links li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.container{
+    background-color: black;
+   display: flex;
+   /* height: 100vh; */
+   
+}
+.course-detail {
+    display: flex;
+    margin: 50px auto;
+    max-width: 1200px;
+    padding: 20px;
+    /* background-color: black; */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* height: 100vh; */
+    
+    
+}
+
+.course-image {
+    /* flex: 1; */
+    padding: 20px;
+    background-color: white;
+}
+
+.course-image img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.course-info {
+    /* flex: 2; */
+    padding: 20px;
+    background-color: black;
+}
+
+.course-info h1 {
+    font-size: 2.0em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.course-info p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: white;
+}
+
+.course-info .course-includes h4 {
+    margin-top: 20px;
+    color: white;
+}
+
+.course-info .course-includes ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: white;
+}
+
+.course-info .course-price {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 20px;
+}
+
+.course-actions {
+    margin-top: 20px;
+}
+
+.course-actions .btn {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* margin-right: 10px; */
+}
+
+.course-actions .btn:hover {
+    background-color: #495057;
+}
+
+   
+    </style>
+
+</head>
+<body>
+    
+        <nav class="navbar">
+            
+            <ul class="nav-links">
+                <li><a class="nav-link fs-6 text-light" href="#">Online Learning</a></li>
+                <li><a class="nav-link fs-6 text-light" href="#">All Courses</a></li>
+                <li><a class="nav-link fs-6 text-light" href="#">Categories</a></li>
+                <li><a class="nav-link fs-6 text-light" href="#">My Learning</a></li>
+                <li><a class="nav-link fs-6 text-light" href="#">Cart</a></li>
+                <li><a class="nav-link fs-6 text-light" href="#">Logout</a></li>
+
+                
+            </ul>
+        </nav>
+    
+
+   
+     
+    <div class="container">
+        <div class="course-detail">
+            <div class="course-image">
+                <img src="{{ course.image.url }}" alt="{{ course.title }}">
+    
+                <div class="course-price">
+                    <p><strong></strong> ${{ course.price }}</p>
+                </div>
+                
+                <div class="course-actions">
+                    <button class="btn add-to-cart">Add to Cart</button>
+                    <button class="btn buy-now">Buy Now</button>
+                </div>
+            </div>
+            <div class="course-info">
+                <h1>{{ course.title }}</h1>
+                <p>{{ course.description }}</p>
+                <p><strong>Category:</strong> {{ course.category }}</p>
+                <p><strong>Created By:</strong> {{ course.instructor.username }}</p>
+                <p><strong>Created at:</strong> </p>
+                <p><strong>Updated at:</strong> </p>
+                
+                <div class="course-includes">
+                    <h4>This course includes</h4>
+                    <ul>
+                        {% for item in course.includes %}
+                            <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>

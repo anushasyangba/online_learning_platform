@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock css %}
+{% block content %}
+
+<div class="container">
+    <h1>Explore Inspiring Online Courses</h1>
+    <div class="course-cards">
+        <div class="card">
+            <div class="badge">New</div>
+            <img src="{% static 'images/1.jpeg' %}" alt="App Development">
+            <h2>APP DEVELOPMENT</h2>
+            <p>Mobile App Development</p>
+            <p>App Development with the Flutter ...</p>
+            <p> <span class="author"> By:Anusha <span>⭐⭐⭐⭐</span></span></p>
+            <!-- <div class="rating">
+                <span>⭐⭐⭐⭐</span>
+            </div> -->
+        </div>
+        <div class="card">
+            <div class="badge">New</div>
+            <img src="{% static 'images/2.jpeg' %}" alt="Web Development">
+            <h2>WEB DEVELOPMENT</h2>
+            <p>Web Development</p>
+            <p>Web development is a broad ...</p>
+            <p> <span class="author">By:Anusha </span></p>
+            <!-- <div class="rating">
+                <span>⭐⭐⭐⭐</span>
+            </div> -->
+        </div>
+        <div class="card">
+            <div class="badge">New</div>
+            <img src="{% static 'images/3.png' %}" alt="Photoshop">
+            <h2>PHOTOSHOP</h2>
+            <p>Graphic Design</p>
+            <p>Photoshop is a powerful image ...</p>
+            <p> <span class="author">By:Anusha </span></p>
+            <!-- <div class="rating">
+                <span>⭐⭐⭐</span>
+            </div> -->
+        </div><div class="card">
+            <div class="badge">New</div>
+            <img src="{% static 'images/4.png' %}" alt="Frontend Development">
+            <h2>FRONTEND DEVELOPMENT</h2>
+            <p>Web Development</p>
+            <p>Frontend development with React.js involves ...</p>
+            <p> <span class="author"> By:Anusha </span></p>
+            <!-- <div class="rating">
+                <span>⭐⭐⭐</span>
+            </div> -->
+        </div>
+    </div>
+</div>
+{% endblock content %}
