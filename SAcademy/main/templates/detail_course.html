@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock css %}
+{% block content %}
+<div class="container">
+    <div class="course-detail">
+        <div class="course-image">
+            <img src="{{ course.image.url }}" alt="{{ course.title }}">
+
+            <div class="course-price">
+                <p><strong></strong> ${{ course.price }}</p>
+            </div>
+            
+            <div class="course-actions">
+                <button class="btn add-to-cart">Add to Cart</button>
+                <button class="btn buy-now">Buy Now</button>
+            </div>
+        </div>
+        <div class="course-info">
+            <h1>{{ course.title }}</h1>
+            <p>{{ course.description }}</p>
+            <p><strong>Category:</strong> {{ course.category }}</p>
+            <p><strong>Created By:</strong> {{ course.instructor }}</p>
+            <p><strong>Created at:</strong> </p>
+            <p><strong>Updated at:</strong> </p>
+            
+            <div class="course-includes">
+                <h4>This course includes</h4>
+                <ul>
+                    {% for item in course.includes %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+        </div>
+    </div>
+</div>
+
+  
+{% endblock content %}
